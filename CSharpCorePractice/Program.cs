@@ -33,6 +33,13 @@ namespace CSharpCorePractice
             Console.WriteLine(professor.Greet());
             professor.Explain();
 
+            //PhotoBook class
+            PhotoBook photoBook = new PhotoBook();
+            PhotoBook photoBook1 = new PhotoBook(24);
+            BigPhotoBook bigPhotoBook = new BigPhotoBook();
+            Console.WriteLine(photoBook.GetNumberPages());
+            Console.WriteLine(photoBook1.GetNumberPages());
+            Console.WriteLine(bigPhotoBook.GetNumberPages());
 
 
     }
