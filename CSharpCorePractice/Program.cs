@@ -9,29 +9,34 @@ namespace CSharpCorePractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("OOP");
-            List<Person> persons = new List<Person>()
-            {
-               new Person("Juan"),
-               new Person("Sara"),
-               new Person("Carlos"),
-               
-            };
-           
-            foreach (var obj in persons)
-            {
-                Console.WriteLine(obj.ToString());
-            }
+            Person[] people = new Person[3];
             Person person = new Person();
-            Student student = new Student();
-            Professor professor = new Professor();
-            Console.WriteLine(person.Greet());
-            Console.WriteLine(student.Greet());
-            student.setAge(21);
-            student.ShowAge();
-            student.Study();
-            Console.WriteLine(professor.Greet());
-            professor.Explain();
+            for(int i=0; i<people.Length; i++)
+            {
+                if(i==0)
+                {
+                    Console.WriteLine("Please enter the teacher name.");
+                    people[i] = new Teacher(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Please enter the Student name.");
+                    people[i] = new Student(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < people.Length; i++)
+            {
+                if (i ==0)
+                {
+                    ((Teacher)people[i]).Explain();
+
+                }
+                else
+                {
+                    ((Student)people[i]).Study();
+                }
+            }
+               
 
             //PhotoBook class
             PhotoBook photoBook = new PhotoBook();
